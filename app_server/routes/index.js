@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const mainCtrl = require('../controllers/main.js');
+const eventController = require('../controllers/main.js');
 
-/* GET home page. */
-router.get('/', mainCtrl.index);
-
+router.get("/", eventController.gethome );
+router.get('/evento', eventController.viewEvents);
+router.get('/evento/:id', eventController.viewEvent);
+router.post('/evento/:id/purchase', eventController.purchaseTickets);
 
 module.exports = router;

@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  section.event-details
+    h1= event.title
+    img(src=event.imageUrl, width="300", height="200")
+    p= event.description
+
+  form(action="/events/purchase" method="post")
+    button(type="submit") Obtener Tickets

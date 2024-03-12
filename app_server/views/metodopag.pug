@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  .event-page
+    .event-header
+      h1= eventData.name
+      img(src=eventData.image, alt="Event Image")
+    .event-description
+      p= eventData.description
+    .event-actions
+      form(action="/event/buy-tickets" method="post")
+        label Metodo de Pago
+        select(name="paymentMethod")
+          option(value="card") Tarjeta de Credito
+          option(value="paypal") PayPal
+        button(type="submit") Comprar Tickets
