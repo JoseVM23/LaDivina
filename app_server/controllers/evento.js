@@ -1,11 +1,15 @@
 const request = require ("request");//llamnar al modulo request
-const apiOptions = {
-  server: "http://localhost:3000/"
+let apiOptions = {
+  server: ""
 }
 
-if (process.env.NODE_ENV === "production") {
-  apiOptions.server = "https://ladivina-69d1bc0b8c8c.herokuapp.com/"
+
+if (process.env.NODE_ENV === 'production') {
+    apiOptions.server = 'https://ladivina-69d1bc0b8c8c.herokuapp.com/'
+} else {
+    apiOptions.server = 'http://localhost:3000/'
 }
+
 
 const getEvent = (req, res, body) => {
   const event = {
