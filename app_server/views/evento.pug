@@ -1,10 +1,16 @@
 extends layout
 
 block content
-  section.event-details
-    h1= event.title
-    img(src=event.imageUrl, width="300", height="200")
-    p= event.description
+
+  h1= evento.nombre
+  img(src='/images/'+evento.imagen, alt=evento.nombre, width="300", height="300")
+  p= evento.detalle
+  p= evento.fecha
+  p= evento.genero
+  p= evento.lugar
+  p= evento.precio
+
+
 
   form(action="/events/purchase" method="post")
-    button(type="submit") Obtener Tickets
+    button(type="submit") Obtener Tickets 

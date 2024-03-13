@@ -1,0 +1,23 @@
+extends layout
+
+block content
+    form(action=`/evento2/create/`, method="post")
+        label(for="nombre") Nombre:
+        input(type="text", id="nombre", name="nombre", required )
+
+        label(for="genero") Género:
+        input(id="genero", name="genero", required )
+        
+        label(for="ubicacion") Ubicación:
+        input(type="text", id="ubicacion", name="ubicacion", required )
+
+        label(for="fecha") Fecha:
+        input(type="date", id="fecha", name="fecha", required )
+
+        label(for="detalle") Detalle:
+        textarea(id="detalle", name="detalle", rows="4", required )
+
+        label(for="precio") Precio:
+        input(type="number", id="precio", name="precio", required )
+
+        button(type="submit") Enviar

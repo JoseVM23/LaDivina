@@ -1,11 +1,12 @@
+const { response } = require("express");
 const request = require ("request");//llamnar al modulo request
 
 const apiOptions = {
-  server: "http://localhost:3000"
+  server: "http://localhost:3000/"
 }
 
 if (process.env.NODE_ENV === "production") {
-  apiOptions.server = "https://"
+  apiOptions.server = "https://ladivina-69d1bc0b8c8c.herokuapp.com/"
 }
 
 
@@ -19,7 +20,9 @@ exports.viewEvents = (req, res) => {
     { id: 2, name: 'Sample Event 2' },
   ];
 
-  res.render('index', { events });
+ 
+  
+ 
 };
 
 exports.viewEvent = (req, res) => {

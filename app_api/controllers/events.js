@@ -8,11 +8,16 @@ const eventCreate = async(req, res) => {
     try {
         const {nombre, imagen, genero, ubicacion, fecha, detalle, precio} = req.body
         const eventsExist = await Evento.findOne({nombre: nombre})
-        if (eventsExist) {res.status(400).json({message: "El Nombre ya existe"})}
+        if (eventsExist) {
+            console.log("El Nombre ya existe")
+            res.status(400).json({message: "El Nombre ya existe"})
+        }
         const event = new Evento ({
             nombre, imagen, genero, ubicacion, fecha, detalle, precio
         })
         await event.save() 
+        console.log(event)
+        console.log("Evento Creado")
         res.status(201).json(event)
     } catch (error) {
         res.status(500).json({message: error.message})

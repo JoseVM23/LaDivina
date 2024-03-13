@@ -2,4 +2,38 @@ extends layout
 
 block content
 
-    h1= evento 
+    h1 Eventos
+
+    .row
+        .col-md-12
+            table.table.table-striped
+                thead
+                    tr
+                        th Nombre
+                        th Imagen
+                        th Genero
+                        th Ubicación
+                        th Fecha
+                        th Detalle 
+                        th Precio
+                tbody
+                    each evento in eventos
+                        tr
+                            td= evento.nombre
+                            td
+                              img.img-thumbnail(src='/images/eventos/'+evento.imagen, alt=evento.nombre, width='100')
+                            td= evento.genero
+                            td= evento.ubicacion
+                            td= evento.fecha
+                            td= evento.detalle
+                            td= evento.precio
+                            td 
+                                a.btn.btn-primary(href='/evento2/evento/'+evento._id) 
+                                    span Ver Evento
+                            td 
+                                a.btn.btn-warning(href='/evento2/evento/edit/'+evento._id) 
+                                    span Editar
+                            td 
+                                form(method='post', action='/evento2/delete/'+evento._id)
+                                    input.btn.btn-danger(type='submit', value='Eliminar')
+                            

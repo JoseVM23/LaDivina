@@ -1,0 +1,23 @@
+extends layout
+
+block content
+    form(action=`/evento2/evento/edit/${event._id}`, method="post")
+        label(for="nombre") Nombre:
+        input(type="text", id="nombre", name="nombre", required value=`${event.nombre}`)
+
+        label(for="genero") Género:
+        input(id="genero", name="genero", required value=`${event.genero}`)
+        
+        label(for="ubicacion") Ubicación:
+        input(type="text", id="ubicacion", name="ubicacion", required value=`${event.ubicacion}`)
+
+        label(for="fecha") Fecha:
+        input(type="date", id="fecha", name="fecha", required value=`${event.fecha}`)
+
+        label(for="detalle") Detalle:
+        textarea(id="detalle", name="detalle", rows="4", required value=`${event.detalle}`)
+
+        label(for="precio") Precio:
+        input(type="number", id="precio", name="precio", required value=`${event.precio}`)
+
+        button(type="submit") Enviar

@@ -35,9 +35,6 @@ app.use("/perfilusu", perfilusuRouter);
 
 
 //REST API
-app.use("/user", apiRouter);
-app.use("/event", apiRouter);
-
 app.use("/api", apiRouter);
 
 // catch 404 and forward to error handler

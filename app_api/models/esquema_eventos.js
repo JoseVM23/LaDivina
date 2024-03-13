@@ -7,7 +7,6 @@ const eventSchema = new mongoose.Schema({
    },
    imagen: {
     type: String,
-    required: true,
     validate: {
         validator: function(value) {
             // Se aceptara formato png unicamente
